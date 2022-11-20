@@ -17,16 +17,16 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        nombre = findViewById(R.id.etNombre);
+        nombre = findViewById(R.id.etNombreComun);
         correo = findViewById(R.id.etCorreo);
-        apellido = findViewById(R.id.etApellido);
+        apellido = findViewById(R.id.etNombreCientifico);
         password = findViewById(R.id.etPassword);
     }
 
     public void enviarDatos (View v){
         Intent z = new Intent(this, menuSeleccion.class);
-        if (nombre.getText().toString().isEmpty() || correo.getText().toString().isEmpty() ||
-                apellido.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
+        if (!nombre.getText().toString().isEmpty() || !correo.getText().toString().isEmpty() ||
+                !apellido.getText().toString().isEmpty() || !password.getText().toString().isEmpty()){
             z.putExtra("nombre", nombre.getText().toString());
             z.putExtra("correo", correo.getText().toString());
             z.putExtra("apellido", apellido.getText().toString());

@@ -4,6 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
     tools:context=".aniadirPlanta">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="579dp"
+        android:layout_height="861dp"
+        android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_green" />
+
+    <TextView
+        android:id="@+id/tvShow"
+        android:layout_width="341dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="92dp"
+        android:text="Registra tu nueva planta"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNombreComun"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="72dp"
+        android:backgroundTint="#F57C00"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:hapticFeedbackEnabled="true"
+        android:hint="Apodo"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShow" />
+
+    <Button
+        android:id="@+id/btnRegistrarPlanta"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#F57C00"
+        android:onClick="enviarDatos"
+        android:text="@string/btn_registraPlanta"
+        android:textColor="#000000"
+        app:cornerRadius="20dp"
+        app:iconTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opcionesPlanta"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="#4CAF50"
+        app:strokeColor="@color/black"
+        tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/opcionesPlanta"
+        android:layout_width="411dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="76dp"
+        android:padding="10sp"
+        android:textColor="#F57C00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNombreComun"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
