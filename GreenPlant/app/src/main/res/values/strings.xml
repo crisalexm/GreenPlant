@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GreenPlant</string>
+    <string name="bienvenida">Welcome to GreenPlant!</string>
+    <string name="btn_iniciar">Iniciar Sesión</string>
+    <string name="btn_registrar">Registrarse</string>
+    <string name="btn_verPlantas">Ver mis plantas</string>
+    <string name="btn_anadirPlantas">Añadir plantas</string>
+    <string name="btn_ingresar">Ingresar</string>
+</resources>

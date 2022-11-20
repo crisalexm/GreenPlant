@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="412dp"
+        android:layout_height="741dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/background_green" />
+
+    <ImageView
+        android:id="@+id/imgPlanta"
+        android:layout_width="281dp"
+        android:layout_height="355dp"
+        android:layout_marginBottom="30dp"
+        android:contentDescription=""
+        android:scaleType="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnAniadir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShow"
+        app:srcCompat="@drawable/planta" />
+
+    <TextView
+        android:id="@+id/tvShow"
+        android:layout_width="296dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="60dp"
+        android:text="Welcome to GreenPlant!"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnMisPlantas"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="60dp"
+        android:onClick="registrarse"
+        android:text="@string/btn_registrar"
+        android:textColor="#000000"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        style="?attr/materialButtonOutlinedStyle"
+        android:backgroundTint="#F57C00"
+        app:strokeColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btnAniadir"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="iniciarSesion"
+        android:text="@string/btn_iniciar"
+        android:textColor="#000000"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnMisPlantas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#F57C00"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/black"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
