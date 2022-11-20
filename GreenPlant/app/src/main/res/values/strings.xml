@@ -6,5 +6,10 @@
     <string name="btn_verPlantas">Ver mis plantas</string>
     <string name="btn_anadirPlantas">Añadir plantas</string>
     <string name="btn_ingresar">Ingresar</string>
+<<<<<<< HEAD
     <string name="btn_registraPlanta">Registrar</string>
+=======
+    <string name="volver">Volver</string>
+    <string name="salir">Salir</string>
+>>>>>>> 79a2ccd2841197c0dca75f8b158f9f4dcc6b974d
 </resources>
