@@ -60,20 +60,20 @@ public class aniadirPlanta extends AppCompatActivity {
         ArrayList<Planta> myPlantsList = new ArrayList<Planta>();
         // Declarar mi planta
         Planta myPlant = new Planta();
-
-
-        if (!apodo.getText().toString().isEmpty()){
-            // Guardar datos en el objeto myPlant
-                // Apodo
-            myPlant.setName(apodo.getText().toString());
-                // Familia de la planta
-            myPlant.setFamilyName(opc);
-            myPlantsList.add(myPlant);
+        // Guardar datos en el objeto myPlant
+        // Apodo
+        myPlant.setName(apodo.getText().toString());
+        // Familia de la planta
+        myPlant.setFamilyName(opc);
+        myPlantsList.add(myPlant);
             // Bundle para enviar datos
+        if (!apodo.getText().toString().isEmpty()) {
             z.putExtra("spTipo", opc);
             z.putExtra("apodo", apodo.getText().toString());
             // Iniciar intent
             startActivity(z);
+        } else {
+            Toast.makeText(this, "El apodo esta vacio", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -21,27 +21,20 @@ public class misPlantas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_plantas);
-
-
-        // Bundle para pasar los datos entre actividades
         try {
+            // Bundle para pasar los datos entre actividades
             Bundle bundle = getIntent().getExtras();
             String apodo = bundle.getString("apodo");
             String opcPlanta = bundle.getString("spTipo");
-        } catch (Exception e) {
-            System.out.println("Ocurrio algo inesperado");
-        }
-        mostrar = findViewById(R.id.tvResultado);
-        mensaje = findViewById(R.id.tvMensaje);
 
-        // Ejecutar funcion
-        if (apodo != null && opcPlanta != null){
+            mostrar = findViewById(R.id.tvResultado);
+            mensaje = findViewById(R.id.tvMensaje);
             mostrarDatosPlanta(opcPlanta, apodo);
-        } else {
-            mensaje.setText("No tienes plantas registradas Aún!!!");
+        } catch (Exception e){
+            Toast.makeText(this, "Aún no tienes plantas Registradas", Toast.LENGTH_SHORT).show();
         }
 
-    }
+}
 
     //menu
     @Override
