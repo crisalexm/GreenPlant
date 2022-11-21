@@ -56,25 +56,24 @@ public class misPlantas extends AppCompatActivity {
         double ran = (Math.random()*100+1);
         double tem = Math.random()*38+1;
         if(ran > 60 && tem > 30){
-            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la maxima letal es muy calurosa!");
+            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la máxima letal es muy calurosa!");
         } else if ( ran > 60 && tem > 12){
-            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la optima");
+            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la óptima");
         } else if (ran > 60 && tem > 0 ){
-            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la minima letal es muy frio");
+            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la miníma letal es muy frio");
         } else if (ran > 40 && tem > 30) {
-            mensaje.setText("Tu planta NECESITA agua y la temperatura es la maxima letal es muy calurosa!");
+            mensaje.setText("Tu planta NECESITA agua y la temperatura es la máxima letal es muy calurosa!");
         } else if (ran > 40 && tem > 12) {
-            mensaje.setText("Tu planta NECESITA agua y la temperatura es la optima");
+            mensaje.setText("Tu planta NECESITA agua y la temperatura es la óptima");
         } else if (ran > 40 && tem > 0) {
-            mensaje.setText("Tu planta NECESITA agua y la temperatura es la minima letal es muy frio");
+            mensaje.setText("Tu planta NECESITA agua y la temperatura es la miníma letal es muy frio");
         } else if (ran > 0 && tem > 30) {
-            mensaje.setText("Tu planta NECESITA agua URGENTE porque esta seca y la temperatura es la maxima letal es muy calurosa!! Podría secarse tu planta");
+            mensaje.setText("Tu planta NECESITA agua URGENTE porque esta seca y la temperatura es la máxima letal es muy calurosa!! Podría secarse tu planta");
         } else if (ran > 0 && tem > 12) {
-            mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la optima");
+            mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la óptima");
         } else if (ran > 0 && tem > 0) {
-            mensaje.setText("Tu planta NECESITA agua URGENTE yy la temperatura es la minima letal es muy frio");
+            mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la miníma letal es muy frio");
         }
-
 
         mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
                 + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
