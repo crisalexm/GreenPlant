@@ -14,6 +14,12 @@ public class misPlantas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_plantas);
+
+        Bundle bundle = getIntent().getExtras();
+
+        String apodo =bundle.getString("apodo");
+        String opcPlanta = bundle.getString("spTipo");
+
     }
 
     //menu
@@ -28,7 +34,7 @@ public class misPlantas extends AppCompatActivity {
         int id = item.getItemId();
 
         switch(id){
-            case R.id.mVolver:
+                case R.id.mVolver:
                 Intent z = new Intent(this, menuSeleccion.class);
                 startActivity(z);
                 break;
@@ -39,4 +45,6 @@ public class misPlantas extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

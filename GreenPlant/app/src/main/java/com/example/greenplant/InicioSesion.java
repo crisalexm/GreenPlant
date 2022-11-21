@@ -53,7 +53,7 @@ public class InicioSesion extends AppCompatActivity {
 
     public void iniciandoSesion (View v) {
         Intent z = new Intent(this, menuSeleccion.class);
-        if (!correo.getText().toString().isEmpty() || !password.getText().toString().isEmpty()){
+        if (!correo.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
           z.putExtra("correo", correo.getText().toString());
           z.putExtra("password", password.getText().toString());
           startActivity(z);
