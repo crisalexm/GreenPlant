@@ -77,7 +77,7 @@ public class misPlantas extends AppCompatActivity {
 
 
         mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
-                + String.format("%.0f", ran) + "\nTemperatura: " + String.format("%.0f", tem));
+                + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
     }
 
 }
