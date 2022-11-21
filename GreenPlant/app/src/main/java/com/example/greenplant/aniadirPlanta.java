@@ -56,18 +56,23 @@ public class aniadirPlanta extends AppCompatActivity {
     public void registrarPlanta (View v){
         Intent z = new Intent(this, misPlantas.class);
         String opc = spinOp.getSelectedItem().toString();
+        //Array con Plantas
+        ArrayList<Planta> myPlantsList = new ArrayList<Planta>();
+        // Declarar mi planta
         Planta myPlant = new Planta();
 
 
         if (!apodo.getText().toString().isEmpty()){
+            // Guardar datos en el objeto myPlant
+                // Apodo
             myPlant.setName(apodo.getText().toString());
+                // Familia de la planta
             myPlant.setFamilyName(opc);
-
-            //1z.putExtra("spTipo",opc);
-            //2z.putExtra("apodo", apodo.getText().toString());
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("planta",myPlant);
-            z.putExtras(bundle);
+            myPlantsList.add(myPlant);
+            // Bundle para enviar datos
+            z.putExtra("spTipo", opc);
+            z.putExtra("apodo", apodo.getText().toString());
+            // Iniciar intent
             startActivity(z);
         }
     }

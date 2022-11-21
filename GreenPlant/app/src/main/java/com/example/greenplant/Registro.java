@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Registro extends AppCompatActivity {
 
     private EditText nombre, correo, apellido, password;
@@ -51,8 +53,17 @@ public class Registro extends AppCompatActivity {
 
     public void enviarDatos (View v){
         Intent z = new Intent(this, menuSeleccion.class);
+        //Array con usuarios
+        ArrayList<Usuario> myUsuarioList = new ArrayList<Usuario>();
         if (!nombre.getText().toString().isEmpty() && !correo.getText().toString().isEmpty() &&
                 !apellido.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
+                // Crear objeto usuario y asignarle varibles
+            Usuario usuario = new Usuario();
+            usuario.setName(nombre.getText().toString());
+            usuario.setEmail(correo.getText().toString());
+            usuario.setPassword(password.getText().toString());
+                // Añadir usuario a la lista
+            myUsuarioList.add(usuario);
 
             z.putExtra("nombre", nombre.getText().toString());
             z.putExtra("correo", correo.getText().toString());

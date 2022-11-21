@@ -8,35 +8,39 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
 public class misPlantas extends AppCompatActivity {
 
     private TextView mostrar, mensaje;
-
+    String apodo;
+    String opcPlanta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_plantas);
-        //Array con Plantas
-        ArrayList<Planta> myPlantsList = new ArrayList<Planta>();
-        //1Bundle bundle = getIntent().getExtras();
-        Bundle objetoEnviado = getIntent().getExtras();
-        Planta planta = null;
-        if (objetoEnviado!=null){
-            planta = (Planta) objetoEnviado.getSerializable("planta");
-            myPlantsList.add(planta);
-            mensaje.setText(planta.getName());
-        }
 
-        //2String apodo = bundle.getString("apodo");
-        //3String opcPlanta = bundle.getString("spTipo");
+
+        // Bundle para pasar los datos entre actividades
+        try {
+            Bundle bundle = getIntent().getExtras();
+            String apodo = bundle.getString("apodo");
+            String opcPlanta = bundle.getString("spTipo");
+        } catch (Exception e) {
+            System.out.println("Ocurrio algo inesperado");
+        }
         mostrar = findViewById(R.id.tvResultado);
         mensaje = findViewById(R.id.tvMensaje);
 
-        //mostrarDatosPlanta(opcPlanta, apodo);
+        // Ejecutar funcion
+        if (apodo != null && opcPlanta != null){
+            mostrarDatosPlanta(opcPlanta, apodo);
+        } else {
+            mensaje.setText("No tienes plantas registradas Aún!!!");
+        }
+
     }
 
     //menu
@@ -86,10 +90,9 @@ public class misPlantas extends AppCompatActivity {
             mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la miníma letal es muy frio");
         }
 
-        //mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
-         //       + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
-        
-
+        // Disparar la funcion mostrandola en el textView de registro
+        mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
+               + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
     }
 
 }
