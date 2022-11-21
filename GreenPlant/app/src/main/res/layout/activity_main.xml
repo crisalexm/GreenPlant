@@ -29,11 +29,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvShow"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
         app:srcCompat="@drawable/planta" />
 
     <TextView
-        android:id="@+id/tvShow"
+        android:id="@+id/tvMensaje"
         android:layout_width="296dp"
         android:layout_height="86dp"
         android:layout_marginTop="60dp"
