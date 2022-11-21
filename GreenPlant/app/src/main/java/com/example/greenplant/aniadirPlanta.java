@@ -12,7 +12,7 @@ import android.widget.Toast;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-
+import java.util.ArrayList;
 
 public class aniadirPlanta extends AppCompatActivity {
     private Spinner spinOp;
@@ -23,10 +23,11 @@ public class aniadirPlanta extends AppCompatActivity {
         setContentView(R.layout.activity_aniadir_planta);
         spinOp=findViewById(R.id.opcionesPlanta);
         apodo = findViewById(R.id.etNombreComun);
-
+        // Array con Opciones
         String[] options = {"Árbol de Jade - Moraceae", "Árbol Lira- Moraceae", "Aloe Vera - Xanthorrhoeaceae", "Anturio Rojo - Araceae"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, options);
         spinOp.setAdapter(adapter);
+
     }
     //menu
     @Override
@@ -55,9 +56,20 @@ public class aniadirPlanta extends AppCompatActivity {
     public void registrarPlanta (View v){
         Intent z = new Intent(this, misPlantas.class);
         String opc = spinOp.getSelectedItem().toString();
+        Planta myPlant = new Planta();
+        //Array con Plantas
+
+        ArrayList<Planta> myPlantsList = new ArrayList<Planta>();
+
         if (!apodo.getText().toString().isEmpty()){
+            myPlant.setName(apodo.getText().toString());
+            myPlant.setFamilyName(opc);
+            myPlantsList.add(myPlant);
             z.putExtra("spTipo",opc);
             z.putExtra("apodo", apodo.getText().toString());
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("planta",myPlant);
+            z.putExtras(bundle);
             startActivity(z);
         }
     }

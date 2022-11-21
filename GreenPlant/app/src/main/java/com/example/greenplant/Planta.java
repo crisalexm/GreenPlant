@@ -1,14 +1,17 @@
 package com.example.greenplant;
 
-public class Planta {
+
+import java.io.Serializable;
+
+public class Planta implements Serializable {
 
     private String name;
-    private String scientificName;
+    private String familyName;
     // Tipo Array List
 
     public Planta(String name, String scientificName) {
         this.name = name;
-        this.scientificName = scientificName;
+        this.familyName = scientificName;
     }
 
     public Planta(){
@@ -23,11 +26,11 @@ public class Planta {
         this.name = name;
     }
 
-    public String getScientificName() {
-        return scientificName;
+    public String getFamilyName() {
+        return familyName;
     }
 
-    public void setScientificName(String scientificName) {
-        this.scientificName = scientificName;
+    public void setFamilyName(String scientificName) {
+        this.familyName = scientificName;
     }
 }

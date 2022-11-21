@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class misPlantas extends AppCompatActivity {
 
     private TextView mostrar, mensaje;
@@ -19,6 +20,12 @@ public class misPlantas extends AppCompatActivity {
         setContentView(R.layout.activity_mis_plantas);
 
         Bundle bundle = getIntent().getExtras();
+        Bundle objetoEnviado = getIntent().getExtras();
+        Planta planta = null;
+        if (objetoEnviado!=null){
+            planta = (Planta) objetoEnviado.getSerializable("planta");
+            mensaje.setText(planta.getName() + " " + planta.getFamilyName());
+        }
 
         String apodo = bundle.getString("apodo");
         String opcPlanta = bundle.getString("spTipo");
@@ -74,10 +81,9 @@ public class misPlantas extends AppCompatActivity {
         } else if (ran > 0 && tem > 0) {
             mensaje.setText("Tu planta NECESITA agua URGENTE yy la temperatura es la minima letal es muy frio");
         }
-
-
-        mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
-                + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
+        //mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
+         //       + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
+        
     }
 
 }
