@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "992056961212",
+    "project_id": "greenplant-9bb20",
+    "storage_bucket": "greenplant-9bb20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992056961212:android:da248b177b8e48fa7f88b9",
+        "android_client_info": {
+          "package_name": "com.example.greenplant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992056961212-62pfmubb4523onksbip9plb0v019evc1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.greenplant",
+            "certificate_hash": "a8c699cb578eb711a9920da3fcf8989dc70d644d"
+          }
+        },
+        {
+          "client_id": "992056961212-08ki2n50robe4qp7a0ffiq8db3512fcl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkLWSn_hjkr__1QOQCZyVjAPNgSm2mT1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992056961212-08ki2n50robe4qp7a0ffiq8db3512fcl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
