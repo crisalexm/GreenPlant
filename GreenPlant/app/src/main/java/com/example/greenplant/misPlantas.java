@@ -22,21 +22,21 @@ public class misPlantas extends AppCompatActivity {
         setContentView(R.layout.activity_mis_plantas);
         //Array con Plantas
         ArrayList<Planta> myPlantsList = new ArrayList<Planta>();
-        Bundle bundle = getIntent().getExtras();
+        //1Bundle bundle = getIntent().getExtras();
         Bundle objetoEnviado = getIntent().getExtras();
         Planta planta = null;
         if (objetoEnviado!=null){
             planta = (Planta) objetoEnviado.getSerializable("planta");
             myPlantsList.add(planta);
-            mensaje.setText(planta.getName() + " " + planta.getFamilyName() + myPlantsList);
+            mensaje.setText(planta.getName());
         }
 
-        String apodo = bundle.getString("apodo");
-        String opcPlanta = bundle.getString("spTipo");
+        //2String apodo = bundle.getString("apodo");
+        //3String opcPlanta = bundle.getString("spTipo");
         mostrar = findViewById(R.id.tvResultado);
         mensaje = findViewById(R.id.tvMensaje);
 
-        mostrarDatosPlanta(opcPlanta, apodo);
+        //mostrarDatosPlanta(opcPlanta, apodo);
     }
 
     //menu
@@ -85,15 +85,11 @@ public class misPlantas extends AppCompatActivity {
         } else if (ran > 0 && tem > 0) {
             mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la miníma letal es muy frio");
         }
-<<<<<<< HEAD
+
         //mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
          //       + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
         
-=======
 
-        mostrar.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
-                + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
->>>>>>> 4bb1b7a1ee35291dab8614bda05f47d7712b874e
     }
 
 }

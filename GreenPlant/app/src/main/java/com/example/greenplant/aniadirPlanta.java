@@ -63,8 +63,8 @@ public class aniadirPlanta extends AppCompatActivity {
             myPlant.setName(apodo.getText().toString());
             myPlant.setFamilyName(opc);
 
-            z.putExtra("spTipo",opc);
-            z.putExtra("apodo", apodo.getText().toString());
+            //1z.putExtra("spTipo",opc);
+            //2z.putExtra("apodo", apodo.getText().toString());
             Bundle bundle = new Bundle();
             bundle.putSerializable("planta",myPlant);
             z.putExtras(bundle);
