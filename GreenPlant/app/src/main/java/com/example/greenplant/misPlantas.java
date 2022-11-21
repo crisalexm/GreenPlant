@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class misPlantas extends AppCompatActivity {
 
@@ -18,13 +20,15 @@ public class misPlantas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_plantas);
-
+        //Array con Plantas
+        ArrayList<Planta> myPlantsList = new ArrayList<Planta>();
         Bundle bundle = getIntent().getExtras();
         Bundle objetoEnviado = getIntent().getExtras();
         Planta planta = null;
         if (objetoEnviado!=null){
             planta = (Planta) objetoEnviado.getSerializable("planta");
-            mensaje.setText(planta.getName() + " " + planta.getFamilyName());
+            myPlantsList.add(planta);
+            mensaje.setText(planta.getName() + " " + planta.getFamilyName() + myPlantsList);
         }
 
         String apodo = bundle.getString("apodo");

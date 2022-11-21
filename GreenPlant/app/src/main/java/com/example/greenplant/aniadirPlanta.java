@@ -57,14 +57,12 @@ public class aniadirPlanta extends AppCompatActivity {
         Intent z = new Intent(this, misPlantas.class);
         String opc = spinOp.getSelectedItem().toString();
         Planta myPlant = new Planta();
-        //Array con Plantas
 
-        ArrayList<Planta> myPlantsList = new ArrayList<Planta>();
 
         if (!apodo.getText().toString().isEmpty()){
             myPlant.setName(apodo.getText().toString());
             myPlant.setFamilyName(opc);
-            myPlantsList.add(myPlant);
+
             z.putExtra("spTipo",opc);
             z.putExtra("apodo", apodo.getText().toString());
             Bundle bundle = new Bundle();
