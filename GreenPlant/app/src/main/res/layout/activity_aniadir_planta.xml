@@ -80,7 +80,7 @@
         android:padding="10sp"
         android:textColor="#F57C00"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombreComun1"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

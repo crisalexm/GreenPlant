@@ -74,7 +74,6 @@ public class AddPlant extends AppCompatActivity {
         Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
     }
     public void verLista(View v){
-
         Intent i = new Intent(this, MyPlants.class);
         startActivity(i);
     }
