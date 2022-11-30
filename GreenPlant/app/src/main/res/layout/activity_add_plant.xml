@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAlignment="center"
-    tools:context=".aniadirPlanta">
+    tools:context=".AddPlant">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -60,7 +59,7 @@
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="207dp"
         android:backgroundTint="#F57C00"
-        android:onClick="registrarPlanta"
+        android:onClick="agregar"
         android:text="@string/btn_registraPlanta"
         android:textColor="#000000"
         app:cornerRadius="20dp"

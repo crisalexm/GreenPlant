@@ -21,7 +21,7 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        nombre = findViewById(R.id.etNombreComun);
+        nombre = findViewById(R.id.etNombreComun1);
         correo = findViewById(R.id.etCorreo);
         apellido = findViewById(R.id.etNombreCientifico);
         password = findViewById(R.id.etPassword);

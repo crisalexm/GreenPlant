@@ -41,7 +41,7 @@ public class menuSeleccion extends AppCompatActivity {
     }
 
     public void aniadirPlanta (View v){
-        Intent x = new Intent(this, aniadirPlanta.class);
+        Intent x = new Intent(this, AddPlant.class);
         startActivity(x);
     }
 

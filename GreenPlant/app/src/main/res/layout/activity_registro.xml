@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNombreComun"
+        android:id="@+id/etNombreComun1"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="44dp"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombreComun" />
+        app:layout_constraintTop_toBottomOf="@+id/etNombreComun1" />
 
     <EditText
         android:id="@+id/etPassword"
