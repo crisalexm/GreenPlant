@@ -36,7 +36,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".aniadirPlanta"
+            android:name=".AniadirPlanta"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -57,7 +57,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Registro"
+            android:name=".Model.Registro"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

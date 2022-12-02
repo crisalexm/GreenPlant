@@ -1,4 +1,4 @@
-package com.example.greenplant;
+package com.example.greenplant.Model;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.greenplant.MainActivity;
+import com.example.greenplant.R;
+import com.example.greenplant.menuSeleccion;
 
 import java.util.ArrayList;
 

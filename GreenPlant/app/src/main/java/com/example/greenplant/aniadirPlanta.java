@@ -12,9 +12,11 @@ import android.widget.Toast;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.greenplant.Model.Planta;
+
 import java.util.ArrayList;
 
-public class aniadirPlanta extends AppCompatActivity {
+public class AniadirPlanta extends AppCompatActivity {
     private Spinner spinOp;
     private TextView apodo;
     @Override

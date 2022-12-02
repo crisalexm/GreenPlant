@@ -1,20 +1,21 @@
 {
   "project_info": {
-    "project_number": "857779024525",
-    "project_id": "greenplant-a17f6",
-    "storage_bucket": "greenplant-a17f6.appspot.com"
+    "project_number": "1088108656506",
+    "firebase_url": "https://gpprueba-f1842-default-rtdb.firebaseio.com",
+    "project_id": "gpprueba-f1842",
+    "storage_bucket": "gpprueba-f1842.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:857779024525:android:c41b4f8ede0414435da8c4",
+        "mobilesdk_app_id": "1:1088108656506:android:d16c56ffb8edfd3c5488c3",
         "android_client_info": {
           "package_name": "com.example.greenplant"
         }
       },
       "oauth_client": [
         {
-          "client_id": "857779024525-31vjelp5ngg4r8g70mt7gfkvt3tbgodi.apps.googleusercontent.com",
+          "client_id": "1088108656506-sg86he7plqkntl95rtbj861lrp0osfm9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.greenplant",
@@ -22,20 +23,20 @@
           }
         },
         {
-          "client_id": "857779024525-feuf7833fgup3htsph5etrb0vkp8v6te.apps.googleusercontent.com",
+          "client_id": "1088108656506-ucb310as2oirlmrj4cast0c5fc1ijr49.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAAynfeYJ3dwWMvfNmqKC48Xqo-HLeWEPU"
+          "current_key": "AIzaSyAovijeuS9nL1sWVb2r2VvIWRghBGGbEp0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "857779024525-feuf7833fgup3htsph5etrb0vkp8v6te.apps.googleusercontent.com",
+              "client_id": "1088108656506-ucb310as2oirlmrj4cast0c5fc1ijr49.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

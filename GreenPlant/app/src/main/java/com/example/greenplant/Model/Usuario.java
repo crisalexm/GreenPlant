@@ -1,4 +1,4 @@
-package com.example.greenplant;
+package com.example.greenplant.Model;
 
 import java.io.Serializable;
 
