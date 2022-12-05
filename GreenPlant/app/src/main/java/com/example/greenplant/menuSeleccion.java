@@ -46,7 +46,7 @@ public class menuSeleccion extends AppCompatActivity {
     }
 
     public void verMisPlantas (View v){
-        Intent x = new Intent(this, misPlantas.class);
+        Intent x = new Intent(this, MyPlants.class);
         startActivity(x);
     }
 }

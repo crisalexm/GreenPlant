@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,7 +21,7 @@ import java.util.UUID;
 public class AddPlant extends AppCompatActivity {
 
     private Spinner spinOp;
-    private TextView apodo;
+    private EditText apodo;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference  databaseReference;
@@ -31,7 +32,7 @@ public class AddPlant extends AppCompatActivity {
         setContentView(R.layout.activity_add_plant);
 
 
-        spinOp=findViewById(R.id.opcionesPlanta1);
+        spinOp = findViewById(R.id.opcionesPlanta1);
         apodo = findViewById(R.id.etNombreComun1);
         // Array con Opciones
         String[] options = {"Árbol de Jade - Moraceae", "Árbol Lira- Moraceae", "Aloe Vera - Xanthorrhoeaceae", "Anturio Rojo - Araceae"};
@@ -39,7 +40,7 @@ public class AddPlant extends AppCompatActivity {
         spinOp.setAdapter(adapter);
 
         iniciarFireBase();
-        //cargarPlanta();
+        cargarPlanta();
     }
 
 
@@ -56,11 +57,12 @@ public class AddPlant extends AppCompatActivity {
 
         if(bundle != null){
 
-            String apodoB = bundle.getString("apodo");
+            String apodoB = bundle.getString("nombre");
             String spinnerPlantasB = spinOp.getSelectedItem().toString();
-            spinnerPlantasB = bundle.getString("spinnerPlantas");
+            spinnerPlantasB = bundle.getString("nombreFamilia");
             String idPlantaB = bundle.getString("idPlanta");
-            //databaseReference.child("Alumno").child()
+
+            apodo.setText(apodoB);
         }
     }
 
@@ -89,12 +91,5 @@ public class AddPlant extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void editar(View view){
-        Planta p = new Planta();
-        p.setName(apodo.getText().toString());
-        p.setFamilyName(spinOp.getSelectedItem().toString());
 
-        databaseReference.child("Planta").child(p.getName()).setValue(p);
-        Toast.makeText(this, "Planta Modificada", Toast.LENGTH_SHORT).show();
-    }
 }

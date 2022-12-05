@@ -45,4 +45,7 @@ public class Planta implements Serializable {
     public void setFamilyName(String scientificName) {
         this.familyName = scientificName;
     }
+
+    @Override
+    public String toString() { return getName() + " " + getFamilyName();}
 }
