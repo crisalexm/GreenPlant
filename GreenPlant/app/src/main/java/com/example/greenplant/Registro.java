@@ -91,6 +91,24 @@ public class Registro extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
     }
 
+    private void cargarUsuario() {
+
+        Bundle bundle = getIntent().getExtras();
+
+        if(bundle != null){
+
+            String nombreUsr = bundle.getString("nombreUsr");
+            String apellidoUsr = bundle.getString("apellidoUsr");
+            String correoUsr = bundle.getString("correoUsr");
+            String passwordUsr = bundle.getString("passwordUsr");
+
+            nombre.setText(nombreUsr);
+            apellido.setText(apellidoUsr);
+            correo.setText(correoUsr);
+            password.setText(passwordUsr);
+        }
+    }
+
     public void agregarUsuario(View v) {
 
        try{
@@ -126,21 +144,4 @@ public class Registro extends AppCompatActivity {
 
     }
 
-    private void cargarUsuario() {
-
-        Bundle bundle = getIntent().getExtras();
-
-        if(bundle != null){
-
-            String nombreUsr = bundle.getString("nombreUsr");
-            String apellidoUsr = bundle.getString("apellidoUsr");
-            String correoUsr = bundle.getString("correoUsr");
-            String passwordUsr = bundle.getString("passwordUsr");
-
-            nombre.setText(nombreUsr);
-            apellido.setText(apellidoUsr);
-            correo.setText(correoUsr);
-            password.setText(passwordUsr);
-        }
-    }
 }
