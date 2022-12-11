@@ -10,11 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.greenplant.MainActivity;
-import com.example.greenplant.Model.Planta;
 import com.example.greenplant.Model.Usuario;
-import com.example.greenplant.R;
-import com.example.greenplant.menuSeleccion;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,9 +30,9 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        nombre = findViewById(R.id.etNombreComun1);
+        nombre = findViewById(R.id.etNombre);
         correo = findViewById(R.id.etCorreo);
-        apellido = findViewById(R.id.etNombreCientifico);
+        apellido = findViewById(R.id.etApellido);
         password = findViewById(R.id.etPassword);
 
         iniciarFireBase();
@@ -94,26 +90,24 @@ public class Registro extends AppCompatActivity {
     public void agregarUsuario(View v) {
 
        try{
-           String nombreB = nombre.getText().toString();
-           String correoB = correo.getText().toString();
-           String apellidoB = apellido.getText().toString();
-           String passwordB = password.getText().toString();
 
-           Usuario usr = new Usuario();
-
-           usr.setName(nombreB);
-           usr.setLastName(apellidoB);
-           usr.setEmail(correoB);
-           usr.setPassword(passwordB);
-
-           Intent z = new Intent(this, menuSeleccion.class);
            if (!nombre.getText().toString().isEmpty() && !correo.getText().toString().isEmpty() &&
                    !apellido.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
-               z.putExtra("nombre", nombre.getText().toString());
-               z.putExtra("correo", correo.getText().toString());
-               z.putExtra("apellido", apellido.getText().toString());
-               z.putExtra("password", password.getText().toString());
-               databaseReference.child("Usuarios").child(usr.getEmail()).setValue(usr);
+               String nombreB = nombre.getText().toString();
+               String correoB = correo.getText().toString();
+               String apellidoB = apellido.getText().toString();
+               String passwordB = password.getText().toString();
+
+               Usuario usr = new Usuario();
+               usr.setId(UUID.randomUUID().toString());
+               usr.setName(nombreB);
+               usr.setLastName(apellidoB);
+               usr.setEmail(correoB);
+               usr.setPassword(passwordB);
+
+               Intent z = new Intent(this, menuSeleccion.class);
+
+               databaseReference.child("Usuarios").child(usr.getId()).setValue(usr);
                Toast.makeText(this, "Usuario Cargado", Toast.LENGTH_SHORT).show();
                startActivity(z);
            } else {
