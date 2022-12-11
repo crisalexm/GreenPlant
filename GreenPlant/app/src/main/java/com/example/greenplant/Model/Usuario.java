@@ -6,18 +6,28 @@ public class Usuario implements Serializable {
 
     private int id;
     private String name;
+    private String lastName;
     private String email;
     private String password;
 
-    public Usuario(int id, String name, String email, String password) {
+    public Usuario(int id, String name, String lastName, String email, String password) {
         this.id = id;
         this.name = name;
+        this.lastName = lastName;
         this.email = email;
         this.password = password;
     }
 
     public Usuario(){
 
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getId() {
@@ -51,4 +61,7 @@ public class Usuario implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() { return getName() + " " + getEmail();}
 }

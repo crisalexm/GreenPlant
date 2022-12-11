@@ -64,7 +64,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Model.Registro"
+            android:name=".Registro"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
