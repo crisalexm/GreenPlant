@@ -24,7 +24,7 @@ public class AniadirPlanta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aniadir_planta);
         spinOp=findViewById(R.id.opcionesPlanta1);
-        apodo = findViewById(R.id.etNombreComun1);
+        apodo = findViewById(R.id.etNombre);
         // Array con Opciones
         String[] options = {"Árbol de Jade - Moraceae", "Árbol Lira- Moraceae", "Aloe Vera - Xanthorrhoeaceae", "Anturio Rojo - Araceae"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, options);
