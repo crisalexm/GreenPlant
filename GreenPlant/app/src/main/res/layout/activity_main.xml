@@ -25,7 +25,7 @@
         android:layout_marginBottom="30dp"
         android:contentDescription=""
         android:scaleType="center"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegistrarPlanta"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrarUsuarioEmPass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
         app:strokeColor="@color/black"/>
 
     <Button
-        android:id="@+id/btnRegistrarPlanta"
+        android:id="@+id/btnRegistrarUsuarioEmPass"
         android:layout_width="300dp"
         android:layout_height="52dp"
         android:layout_marginBottom="20dp"

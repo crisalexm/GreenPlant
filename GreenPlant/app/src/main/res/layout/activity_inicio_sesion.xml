@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPasswordRegistro"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etCorreo" />
 
     <Button
-        android:id="@+id/btnRegistrarPlanta"
+        android:id="@+id/btnRegistrarUsuarioEmPass"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="300dp"
         android:layout_height="52dp"
@@ -63,7 +63,7 @@
         app:iconTint="#4CAF50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordRegistro"
         app:rippleColor="#4CAF50"
         app:strokeColor="@color/black"
         tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />

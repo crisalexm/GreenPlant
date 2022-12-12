@@ -2,10 +2,7 @@ package com.example.greenplant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,7 +20,7 @@ public class InicioSesion extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_sesion);
 
         correo = findViewById(R.id.etCorreo);
-        password = findViewById(R.id.etPassword);
+        password = findViewById(R.id.etPasswordRegistro);
     }
 
     //menu

@@ -2,12 +2,14 @@ package com.example.greenplant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.greenplant.Model.Usuario;
@@ -20,20 +22,30 @@ import java.util.UUID;
 
 public class Registro extends AppCompatActivity {
 
-    private EditText nombre, correo, apellido, password;
+    private EditText nombre, apellido;
+    private TextView correoR, passwordR;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
         nombre = findViewById(R.id.etNombre);
-        correo = findViewById(R.id.etCorreo);
         apellido = findViewById(R.id.etApellido);
-        password = findViewById(R.id.etPassword);
+        correoR = findViewById(R.id.tvCorreoR);
+        passwordR = findViewById(R.id.tvPasswordR);
+
+        Bundle bundle = getIntent().getExtras();
+
+        String correoFB = bundle.getString("emailFirebase");
+        String passwordFB = bundle.getString("passwordFirebase");
+
+        correoR.setText(correoFB);
+        passwordR.setText(passwordFB);
 
         iniciarFireBase();
         cargarUsuario();
@@ -67,12 +79,9 @@ public class Registro extends AppCompatActivity {
         Intent z = new Intent(this, menuSeleccion.class);
         //Array con usuarios
         ArrayList<Usuario> myUsuarioList = new ArrayList<Usuario>();
-        if (!nombre.getText().toString().isEmpty() && !correo.getText().toString().isEmpty() &&
-                !apellido.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
+        if (!nombre.getText().toString().isEmpty() && !apellido.getText().toString().isEmpty()){
             z.putExtra("nombre", nombre.getText().toString());
-            z.putExtra("correo", correo.getText().toString());
             z.putExtra("apellido", apellido.getText().toString());
-            z.putExtra("password", password.getText().toString());
             startActivity(z);
         } else {
             Toast.makeText(this, "Los campos no pueden estar vacíos, favor rellenar la información", Toast.LENGTH_SHORT).show();
@@ -95,13 +104,13 @@ public class Registro extends AppCompatActivity {
 
             String nombreUsr = bundle.getString("nombreUsr");
             String apellidoUsr = bundle.getString("apellidoUsr");
-            String correoUsr = bundle.getString("correoUsr");
-            String passwordUsr = bundle.getString("passwordUsr");
+            String correoUsr = bundle.getString("emailFirebase");
+            String passwordUsr = bundle.getString("passwordFirebase");
 
             nombre.setText(nombreUsr);
             apellido.setText(apellidoUsr);
-            correo.setText(correoUsr);
-            password.setText(passwordUsr);
+            correoR.setText(correoUsr);
+            passwordR.setText(passwordUsr);
         }
     }
 
@@ -109,12 +118,11 @@ public class Registro extends AppCompatActivity {
 
        try{
 
-           if (!nombre.getText().toString().isEmpty() && !correo.getText().toString().isEmpty() &&
-                   !apellido.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
+           if (!nombre.getText().toString().isEmpty() && !apellido.getText().toString().isEmpty()){
                String nombreB = nombre.getText().toString();
-               String correoB = correo.getText().toString();
+               String correoB = correoR.getText().toString();
                String apellidoB = apellido.getText().toString();
-               String passwordB = password.getText().toString();
+               String passwordB = passwordR.getText().toString();
 
                Usuario usr = new Usuario();
                usr.setId(UUID.randomUUID().toString());

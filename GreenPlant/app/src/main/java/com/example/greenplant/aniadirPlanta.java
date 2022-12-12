@@ -15,7 +15,7 @@ import android.widget.Spinner;
 import com.example.greenplant.Model.Planta;
 
 import java.util.ArrayList;
-
+/**
 public class AniadirPlanta extends AppCompatActivity {
     private Spinner spinOp;
     private TextView apodo;
@@ -78,4 +78,4 @@ public class AniadirPlanta extends AppCompatActivity {
             Toast.makeText(this, "El apodo esta vacio", Toast.LENGTH_SHORT).show();
         }
     }
-}
+}**/
