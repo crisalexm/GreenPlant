@@ -56,7 +56,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="56dp"
         android:backgroundTint="#F57C00"
-        android:onClick="iniciandoSesion"
+        android:onClick="userLogin"
         android:text="@string/btn_ingresar"
         android:textColor="#000000"
         app:cornerRadius="20dp"
