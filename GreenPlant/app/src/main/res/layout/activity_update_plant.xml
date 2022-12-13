@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdatePlant">
+    <ImageView
+        android:id="@+id/imgUpd"
+        android:layout_width="579dp"
+        android:layout_height="861dp"
+        android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_green" />
+
+    <TextView
+        android:id="@+id/tvMensajeUpd"
+        android:layout_width="341dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="92dp"
+        android:text="Actualiza los datos de tu planta"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etApodoUpd"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="72dp"
+        android:backgroundTint="#F57C00"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:hapticFeedbackEnabled="true"
+        android:hint="Apodo"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensajeUpd" />
+
+    <Button
+        android:id="@+id/btnActualizar"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="562dp"
+        android:layout_marginEnd="141dp"
+        android:backgroundTint="#F57C00"
+        android:onClick="updatePlantas"
+        android:text="Actualizar"
+        android:textColor="#000000"
+        app:cornerRadius="20dp"
+        app:iconTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="@+id/imgUpd"
+        app:layout_constraintTop_toTopOf="@+id/imgUpd"
+        app:rippleColor="#4CAF50"
+        app:strokeColor="@color/black"
+        tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btnVerPlantasUpd"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="138dp"
+        android:layout_marginBottom="140dp"
+        android:backgroundTint="#F57C00"
+        android:onClick="verLista"
+        android:text="Cancelar"
+        android:textColor="#000000"
+        app:cornerRadius="20dp"
+        app:iconTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@+id/imgUpd"
+        app:layout_constraintStart_toStartOf="@+id/imgUpd"
+        app:rippleColor="#4CAF50"
+        app:strokeColor="@color/black"
+        tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/opPlant"
+        android:layout_width="386dp"
+        android:layout_height="54dp"
+        android:padding="10sp"
+        android:textColor="#F57C00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteY="366dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

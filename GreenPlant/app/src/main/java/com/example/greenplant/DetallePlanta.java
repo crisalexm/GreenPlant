@@ -11,8 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
 
 public class DetallePlanta extends AppCompatActivity {
 
@@ -95,4 +95,6 @@ public class DetallePlanta extends AppCompatActivity {
         resultado.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
                 + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
     }
+
+
 }
