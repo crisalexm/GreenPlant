@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.greenplant.Model.Planta;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,6 +27,7 @@ public class AddPlant extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference  databaseReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,7 @@ public class AddPlant extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
+
         }
         return super.onOptionsItemSelected(item);
     }

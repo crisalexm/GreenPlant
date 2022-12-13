@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.example.greenplant.Model.Planta;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +29,7 @@ public class MyPlants extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
+
     private List<Planta> listaPlantas = new ArrayList<Planta>();
     ArrayAdapter<Planta> arrayAdapterPlanta;
     Planta selectPlanta;
@@ -41,6 +43,7 @@ public class MyPlants extends AppCompatActivity {
         lvPlanta = findViewById(R.id.lvPlantas);
         iniciarFireBase();
         cargarLista();
+
 
         lvPlanta.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -78,6 +81,8 @@ public class MyPlants extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
+
+
         }
         return super.onOptionsItemSelected(item);
     }

@@ -71,6 +71,7 @@ public class Registro extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -145,5 +146,6 @@ public class Registro extends AppCompatActivity {
         }
 
     }
+
 
 }

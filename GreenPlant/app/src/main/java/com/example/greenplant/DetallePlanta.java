@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -18,10 +19,12 @@ public class DetallePlanta extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_planta);
+
 
         resultado = findViewById(R.id.tvResultado);
         mensaje = findViewById(R.id.tvMensaje);
@@ -31,8 +34,6 @@ public class DetallePlanta extends AppCompatActivity {
         String nombrePlanta = bundle.getString("nombre");
         String nombreFamilia = bundle.getString("nombreFamilia");
         String idPlanta = bundle.getString("idPlanta");
-
-        //resultado.setText("Apodo: "+ nombrePlanta + "\nTipo de Planta: "+ nombreFamilia);
 
         mostrarDatosPlanta(nombreFamilia, nombrePlanta);
     }
@@ -56,6 +57,7 @@ public class DetallePlanta extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
+
         }
         return super.onOptionsItemSelected(item);
     }

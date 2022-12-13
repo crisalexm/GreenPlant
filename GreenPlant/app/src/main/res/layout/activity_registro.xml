@@ -95,8 +95,8 @@
         android:layout_marginTop="13dp"
         android:layout_marginEnd="162dp"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
+        android:textColor="#00000000"
+        android:textSize="1sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/tvCorreoR" />
 
