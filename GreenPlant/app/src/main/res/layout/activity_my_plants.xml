@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/spUpd"
         android:layout_width="412dp"
         android:layout_height="741dp"
         android:scaleType="centerCrop"
@@ -22,8 +22,8 @@
 
     <ListView
         android:id="@+id/lvPlantas"
-        android:layout_width="403dp"
-        android:layout_height="575dp"
+        android:layout_width="414dp"
+        android:layout_height="398dp"
         android:layout_marginStart="2dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="2dp"
@@ -32,12 +32,63 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnNuevo"
+        android:id="@+id/btnDeleteE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="301dp"
-        android:layout_marginTop="52dp"
-        android:text="Nuevo"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="57dp"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toBottomOf="@+id/spUpd"
+        app:layout_constraintStart_toStartOf="@+id/spUpd" />
+
+    <Button
+        android:id="@+id/btnUpdateE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginBottom="57dp"
+        android:text="Editar"
+        app:layout_constraintBottom_toBottomOf="@+id/spUpd"
+        app:layout_constraintStart_toStartOf="@+id/spUpd" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="57dp"
+        android:text="Añadir"
+        app:layout_constraintBottom_toBottomOf="@+id/spUpd"
+        app:layout_constraintEnd_toEndOf="@+id/spUpd" />
+
+    <EditText
+        android:id="@+id/etApodoUpd"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="445dp"
+        android:backgroundTint="#F57C00"
+        android:backgroundTintMode="add"
+        android:ems="10"
+        android:hapticFeedbackEnabled="true"
+        android:hint="Apodo"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvPlantas" />
+        app:layout_constraintTop_toTopOf="@+id/spUpd" />
+
+    <Spinner
+        android:id="@+id/opcPlantUdp"
+        android:layout_width="386dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="524dp"
+        android:padding="10sp"
+        android:textColor="#F57C00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spUpd"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

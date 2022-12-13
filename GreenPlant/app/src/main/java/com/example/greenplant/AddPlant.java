@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.example.greenplant.Model.Planta;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -36,7 +35,7 @@ public class AddPlant extends AppCompatActivity {
 
 
         spinOp = findViewById(R.id.opcionesPlanta1);
-        apodo = findViewById(R.id.etNombre);
+        apodo = findViewById(R.id.etNombreUpd);
         // Array con Opciones
         String[] options = {"Árbol de Jade - Moraceae", "Árbol Lira- Moraceae", "Aloe Vera - Xanthorrhoeaceae", "Anturio Rojo - Araceae"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, options);

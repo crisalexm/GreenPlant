@@ -8,7 +8,7 @@
     tools:context=".Registro">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgBack"
         android:layout_width="579dp"
         android:layout_height="861dp"
         android:contentDescription="TODO"
@@ -72,15 +72,15 @@
         android:id="@+id/etCorreo"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="337dp"
         android:backgroundTint="#F57C00"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMensaje" />
+        app:layout_constraintTop_toTopOf="@+id/imgBack" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

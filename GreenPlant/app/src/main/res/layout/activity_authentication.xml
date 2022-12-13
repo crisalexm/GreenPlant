@@ -7,7 +7,7 @@
     tools:context=".Authentication">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/spUpd"
         android:layout_width="579dp"
         android:layout_height="861dp"
         android:contentDescription="TODO"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/background_green" />
 
     <TextView
-        android:id="@+id/tvMensaje"
+        android:id="@+id/tvMensajeUpd"
         android:layout_width="371dp"
         android:layout_height="97dp"
         android:layout_marginTop="92dp"
@@ -45,8 +45,8 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColorHint="#000000"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/spUpd"
+        app:layout_constraintTop_toTopOf="@+id/spUpd" />
 
     <EditText
         android:id="@+id/etPasswordAuth2"
@@ -61,8 +61,8 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColorHint="#000000"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintEnd_toEndOf="@+id/spUpd"
+        app:layout_constraintTop_toTopOf="@+id/spUpd" />
 
     <Button
         android:id="@+id/btnRegistrarUsuarioEmPass"
@@ -76,7 +76,7 @@
         android:textColor="#000000"
         app:cornerRadius="20dp"
         app:iconTint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/spUpd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,6 +97,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/spUpd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

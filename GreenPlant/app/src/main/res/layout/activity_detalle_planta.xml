@@ -7,7 +7,7 @@
     tools:context=".DetallePlanta">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/spUpd"
         android:layout_width="412dp"
         android:layout_height="741dp"
         android:scaleType="centerCrop"
@@ -31,7 +31,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/spUpd"
         app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
 
     <TextView
@@ -59,8 +59,8 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="@+id/spUpd"
+        app:layout_constraintTop_toTopOf="@+id/spUpd" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -68,8 +68,8 @@
         android:layout_height="132dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="280dp"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/spUpd"
+        app:layout_constraintTop_toTopOf="@+id/spUpd"
         app:srcCompat="@drawable/plantageneric" />
 
     <Button
@@ -79,13 +79,14 @@
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="48dp"
         android:backgroundTint="#F57C00"
+        android:onClick="updatePlant"
         android:text="Editar"
         android:textColor="#000000"
         app:cornerRadius="20dp"
         app:iconTint="#4CAF50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensajeUpd"
         app:layout_constraintVertical_bias="1.0"
         app:rippleColor="#4CAF50"
         app:strokeColor="@color/black" />
@@ -96,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:backgroundTint="#FF0000"
+        android:onClick="deletePlant"
         android:text="Eliminar"
         android:textColor="#000000"
         app:cornerRadius="20dp"
@@ -104,7 +106,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnEditar"
         app:layout_constraintHorizontal_bias="0.391"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensajeUpd"
         app:layout_constraintVertical_bias="1.0"
         app:rippleColor="#4CAF50"
         app:strokeColor="@color/black" />

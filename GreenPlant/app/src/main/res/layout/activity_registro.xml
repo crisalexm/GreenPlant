@@ -8,7 +8,7 @@
     tools:context=".Registro">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/spUpd"
         android:layout_width="579dp"
         android:layout_height="861dp"
         android:contentDescription="TODO"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/background_green" />
 
     <TextView
-        android:id="@+id/tvMensaje"
+        android:id="@+id/tvMensajeUpd"
         android:layout_width="350dp"
         android:layout_height="53dp"
         android:layout_marginTop="92dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etNombre"
+        android:id="@+id/etNombreUpd"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="216dp"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMensaje" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMensajeUpd" />
 
     <EditText
         android:id="@+id/etApellido"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/etNombreUpd" />
 
     <Button
         android:id="@+id/btnRegistrarUsuarioEmPass"
@@ -81,7 +81,7 @@
         android:textColor="#000000"
         app:cornerRadius="20dp"
         app:iconTint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/spUpd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="#4CAF50"
@@ -97,7 +97,7 @@
         android:textAlignment="center"
         android:textColor="#00000000"
         android:textSize="1sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/spUpd"
         app:layout_constraintTop_toBottomOf="@+id/tvCorreoR" />
 
     <TextView
@@ -109,7 +109,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/tvMensaje" />
+        app:layout_constraintEnd_toEndOf="@+id/spUpd"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensajeUpd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

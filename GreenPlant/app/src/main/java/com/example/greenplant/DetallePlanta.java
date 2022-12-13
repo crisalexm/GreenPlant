@@ -6,25 +6,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class DetallePlanta extends AppCompatActivity {
 
     TextView resultado, mensaje;
-
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
+    String idPlants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_planta);
-
 
         resultado = findViewById(R.id.tvResultado);
         mensaje = findViewById(R.id.tvMensaje);
@@ -34,8 +34,10 @@ public class DetallePlanta extends AppCompatActivity {
         String nombrePlanta = bundle.getString("nombre");
         String nombreFamilia = bundle.getString("nombreFamilia");
         String idPlanta = bundle.getString("idPlanta");
-
+        idPlants = idPlanta;
         mostrarDatosPlanta(nombreFamilia, nombrePlanta);
+
+        iniciarFireBase();
     }
     //menu
     @Override
@@ -61,6 +63,31 @@ public class DetallePlanta extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void updatePlant(View v){
+        Intent d = new Intent(this, UpdatePlant.class);
+        d.putExtra("idPlantaUdp", idPlants);
+        startActivity(d);
+    }
+
+    public void deletePlant() {
+
+        Bundle bundle = getIntent().getExtras();
+        String idPlanta = bundle.getString("idPlant");
+
+        databaseReference.child("Planta").child(idPlanta).removeValue();
+        Intent h = new Intent(this, MyPlants.class);
+        startActivity(h);
+    }
+
+    private void iniciarFireBase() {
+
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+    }
+
+
     public void mostrarDatosPlanta(String op, String apod){
         double ran = (Math.random()*100+1);
         double tem = Math.random()*38+1;

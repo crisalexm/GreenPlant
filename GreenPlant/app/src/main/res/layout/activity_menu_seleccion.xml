@@ -7,7 +7,7 @@
     tools:context=".menuSeleccion">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/spUpd"
         android:layout_width="412dp"
         android:layout_height="741dp"
         android:scaleType="centerCrop"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/background_green" />
 
     <TextView
-        android:id="@+id/tvMensaje"
+        android:id="@+id/tvMensajeUpd"
         android:layout_width="296dp"
         android:layout_height="86dp"
         android:layout_marginStart="58dp"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensajeUpd"
         app:strokeColor="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
