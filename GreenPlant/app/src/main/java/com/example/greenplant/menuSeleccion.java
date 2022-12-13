@@ -8,12 +8,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class menuSeleccion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_seleccion);
+
     }
 
     //menu
@@ -21,6 +24,8 @@ public class menuSeleccion extends AppCompatActivity {
     public boolean onCreateOptionsMenu( Menu menu) {
         getMenuInflater().inflate(R.menu.mimenu, menu);
         return super.onCreateOptionsMenu(menu);
+
+
     }
 
     @Override
@@ -36,6 +41,7 @@ public class menuSeleccion extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
+
         }
         return super.onOptionsItemSelected(item);
     }

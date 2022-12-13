@@ -1,4 +1,4 @@
-package com.example.greenplant;
+package com.example.greenplant.Model;
 
 public class Controlador {
     private float humedadTierra;

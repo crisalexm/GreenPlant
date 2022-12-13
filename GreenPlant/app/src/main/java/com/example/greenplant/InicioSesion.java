@@ -57,6 +57,7 @@ public class InicioSesion extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -92,6 +93,9 @@ public class InicioSesion extends AppCompatActivity {
         });
     }
 
+    public void cerrarSesion(View v){
+        mAuth.signOut();
+    }
 
     public void iniciandoSesion (View v) {
         Intent z = new Intent(this, menuSeleccion.class);

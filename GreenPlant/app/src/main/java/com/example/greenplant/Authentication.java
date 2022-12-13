@@ -61,6 +61,8 @@ public class Authentication extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
+
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -70,7 +72,6 @@ public class Authentication extends AppCompatActivity {
         {
             try {
 
-                String id1 = UUID.randomUUID().toString();
                 String email1 = email.getText().toString().trim();
                 String pass1 = password1.getText().toString().trim();
                 String pass2 = password2.getText().toString().trim();
