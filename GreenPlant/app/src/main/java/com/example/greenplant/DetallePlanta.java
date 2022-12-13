@@ -2,11 +2,14 @@ package com.example.greenplant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
+
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -14,9 +17,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DetallePlanta extends AppCompatActivity {
 
     TextView resultado, mensaje;
+    ListView listV_planta;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    //Planta selectedPlant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,8 @@ public class DetallePlanta extends AppCompatActivity {
 
         resultado = findViewById(R.id.tvResultado);
         mensaje = findViewById(R.id.tvMensaje);
+
+
 
         Bundle bundle = getIntent().getExtras();
 
@@ -35,6 +42,8 @@ public class DetallePlanta extends AppCompatActivity {
         //resultado.setText("Apodo: "+ nombrePlanta + "\nTipo de Planta: "+ nombreFamilia);
 
         mostrarDatosPlanta(nombreFamilia, nombrePlanta);
+
+
     }
     //menu
     @Override
