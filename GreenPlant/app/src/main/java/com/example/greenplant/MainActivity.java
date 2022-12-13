@@ -13,12 +13,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+    // Iniciar Sesion
     public void iniciarSesion (View v){
         Intent x = new Intent(this, InicioSesion.class);
         startActivity(x);
     }
 
+    // Registrarse
     public void registrarse (View v){
         Intent x = new Intent(this, Authentication.class);
         startActivity(x);
