@@ -25,19 +25,24 @@
         android:layout_width="403dp"
         android:layout_height="575dp"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMyPlants" />
 
-    <Button
-        android:id="@+id/btnNuevo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="301dp"
-        android:layout_marginTop="52dp"
-        android:text="Nuevo"
+    <TextView
+        android:id="@+id/tvMyPlants"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:text="Mis Plantas"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvPlantas" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

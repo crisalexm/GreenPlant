@@ -7,18 +7,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
 public class DetallePlanta extends AppCompatActivity {
 
     TextView resultado, mensaje;
-    ListView listV_planta;
-
+    String idPlant;
+    String nombrePlant;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     //Planta selectedPlant;
@@ -38,12 +40,19 @@ public class DetallePlanta extends AppCompatActivity {
         String nombrePlanta = bundle.getString("nombre");
         String nombreFamilia = bundle.getString("nombreFamilia");
         String idPlanta = bundle.getString("idPlanta");
-
+        idPlant = idPlanta;
+        nombrePlant = nombrePlanta;
         //resultado.setText("Apodo: "+ nombrePlanta + "\nTipo de Planta: "+ nombreFamilia);
 
         mostrarDatosPlanta(nombreFamilia, nombrePlanta);
 
+        iniciarFireBase();
+    }
+    private void iniciarFireBase() {
 
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
     }
     //menu
     @Override
@@ -95,6 +104,11 @@ public class DetallePlanta extends AppCompatActivity {
         resultado.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
                 + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
     }
-
+    public void updatePlant(View v){
+        Intent i = new Intent(this, UpdatePlant.class);
+        i.putExtra("idPlanta", idPlant);
+        i.putExtra("nombre", nombrePlant);
+        startActivity(i);
+    }
 
 }
