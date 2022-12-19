@@ -11,13 +11,11 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-<<<<<<< HEAD
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-=======
-
 import com.google.firebase.FirebaseApp;
->>>>>>> ca8828331f21237f629861858fead22dd1e67c99
+
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
@@ -47,12 +45,9 @@ public class DetallePlanta extends AppCompatActivity {
         String nombrePlanta = bundle.getString("nombre");
         String nombreFamilia = bundle.getString("nombreFamilia");
         String idPlanta = bundle.getString("idPlanta");
-<<<<<<< HEAD
-=======
         idPlant = idPlanta;
         nombrePlant = nombrePlanta;
         //resultado.setText("Apodo: "+ nombrePlanta + "\nTipo de Planta: "+ nombreFamilia);
->>>>>>> ca8828331f21237f629861858fead22dd1e67c99
 
         mostrarDatosPlanta(nombreFamilia, nombrePlanta);
 
