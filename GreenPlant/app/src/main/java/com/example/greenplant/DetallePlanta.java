@@ -2,22 +2,33 @@ package com.example.greenplant;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+=======
+
+import com.google.firebase.FirebaseApp;
+>>>>>>> ca8828331f21237f629861858fead22dd1e67c99
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
 
 public class DetallePlanta extends AppCompatActivity {
 
     TextView resultado, mensaje;
-
+    String idPlant;
+    String nombrePlant;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    //Planta selectedPlant;
 
 
     @Override
@@ -29,13 +40,29 @@ public class DetallePlanta extends AppCompatActivity {
         resultado = findViewById(R.id.tvResultado);
         mensaje = findViewById(R.id.tvMensaje);
 
+
+
         Bundle bundle = getIntent().getExtras();
 
         String nombrePlanta = bundle.getString("nombre");
         String nombreFamilia = bundle.getString("nombreFamilia");
         String idPlanta = bundle.getString("idPlanta");
+<<<<<<< HEAD
+=======
+        idPlant = idPlanta;
+        nombrePlant = nombrePlanta;
+        //resultado.setText("Apodo: "+ nombrePlanta + "\nTipo de Planta: "+ nombreFamilia);
+>>>>>>> ca8828331f21237f629861858fead22dd1e67c99
 
         mostrarDatosPlanta(nombreFamilia, nombrePlanta);
+
+        iniciarFireBase();
+    }
+    private void iniciarFireBase() {
+
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
     }
     //menu
     @Override
@@ -88,4 +115,11 @@ public class DetallePlanta extends AppCompatActivity {
         resultado.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
                 + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
     }
+    public void updatePlant(View v){
+        Intent i = new Intent(this, UpdatePlant.class);
+        i.putExtra("idPlanta", idPlant);
+        i.putExtra("nombre", nombrePlant);
+        startActivity(i);
+    }
+
 }
