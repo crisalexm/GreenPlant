@@ -15,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/background_green" />
 
@@ -24,7 +23,7 @@
         android:layout_width="296dp"
         android:layout_height="86dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="84dp"
         android:text="Mis Plantas"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -39,14 +38,14 @@
         android:layout_width="296dp"
         android:layout_height="86dp"
         android:layout_marginStart="58dp"
-        android:layout_marginTop="123dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="58dp"
         android:text="Mis Plantas"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,8 +53,8 @@
         android:id="@+id/tvResultado"
         android:layout_width="246dp"
         android:layout_height="128dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="224dp"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15sp"
@@ -67,7 +66,7 @@
         android:layout_width="137dp"
         android:layout_height="132dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="228dp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:srcCompat="@drawable/plantageneric" />
@@ -76,7 +75,7 @@
         android:id="@+id/btnEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="52dp"
         android:layout_marginBottom="48dp"
         android:backgroundTint="#F57C00"
         android:onClick="updatePlant"
@@ -87,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.273"
         app:rippleColor="#4CAF50"
         app:strokeColor="@color/black" />
 
@@ -97,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:backgroundTint="#FF0000"
+        android:onClick="deletePlanta"
         android:text="Eliminar"
         android:textColor="#000000"
         app:cornerRadius="20dp"
@@ -106,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.391"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMensaje"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.273"
         app:rippleColor="#4CAF50"
         app:strokeColor="@color/black" />
 

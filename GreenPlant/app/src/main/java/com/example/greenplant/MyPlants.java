@@ -44,7 +44,6 @@ public class MyPlants extends AppCompatActivity {
         iniciarFireBase();
         cargarLista();
 
-
         lvPlanta.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -81,8 +80,6 @@ public class MyPlants extends AppCompatActivity {
             case R.id.mSalir:
                 finishAffinity();
                 break;
-
-
         }
         return super.onOptionsItemSelected(item);
     }
@@ -114,5 +111,6 @@ public class MyPlants extends AppCompatActivity {
             }
         });
     }
+
 
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".misPlantas">
+    tools:context=".DetalleControlador">
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -20,54 +21,31 @@
         app:srcCompat="@drawable/background_green" />
 
     <TextView
-        android:id="@+id/tvMensaje"
-        android:layout_width="296dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginBottom="83dp"
-        android:text="Mis Plantas"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2" />
-
-    <TextView
-        android:id="@+id/tvShow3"
+        android:id="@+id/tvShowControlador"
         android:layout_width="296dp"
         android:layout_height="86dp"
         android:layout_marginStart="58dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="58dp"
-        android:text="Mis Plantas"
+        android:text="Controlador"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvResultado"
-        android:layout_width="246dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="132dp"
+        android:id="@+id/tvResultadoContr"
+        android:layout_width="279dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="236dp"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="137dp"
-        android:layout_height="132dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="132dp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:srcCompat="@drawable/plantageneric" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
