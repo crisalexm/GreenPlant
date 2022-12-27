@@ -49,4 +49,14 @@ public class Controlador {
     public void setTemperaturaAire(float temperaturaAire) {
         this.temperaturaAire = temperaturaAire;
     }
+
+    @Override
+    public String toString() {
+        return "Controlador{" +
+                "humedadTierra=" + humedadTierra +
+                ", temperaturaAire=" + temperaturaAire +
+                ", humStr='" + humStr + '\'' +
+                ", temStr='" + temStr + '\'' +
+                '}';
+    }
 }

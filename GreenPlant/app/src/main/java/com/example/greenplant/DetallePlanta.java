@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 
 import com.example.greenplant.Model.Controlador;
+import com.example.greenplant.Model.HumTemp;
 import com.example.greenplant.Model.Planta;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +30,9 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +41,9 @@ public class DetallePlanta extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     private DatabaseReference mDatabase;
-    private ValueEventListener eventListener;
 
-    TextView resultado, mensaje;
-    String idPlant, humedad1, temp;
+    TextView resultado, resultado2, mensaje;
+    String idPlant, humedad1, temp1;
     String nombrePlant;
 
 
@@ -51,6 +54,7 @@ public class DetallePlanta extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_planta);
 
         resultado = findViewById(R.id.tvResultado);
+        resultado2 = findViewById(R.id.tvResultado2);
         mensaje = findViewById(R.id.tvMensaje);
 
         iniciarFireBase();
@@ -64,7 +68,7 @@ public class DetallePlanta extends AppCompatActivity {
         nombrePlant = nombrePlanta;
 
         mostrarDatosPlanta(nombreFamilia, nombrePlanta);
-
+        //cargarHumedad();
 
     }
     private void iniciarFireBase() {
@@ -98,34 +102,73 @@ public class DetallePlanta extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void mostrarDatosPlanta(String op, String apod){
-        Controlador cont = new Controlador();
-        cont.setHumStr(String.valueOf(mDatabase.child("Humidity").child("Humidity").get()));
-        cont.setTemStr(String.valueOf(mDatabase.child("Temperature").child("Temperature").get()));
-        double ran = cont.getHumedadTierra();
-        double tem = Math.random()*38+1;
-        if(ran > 60 && tem > 30){
-            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la máxima letal es muy calurosa!");
-        } else if ( ran > 60 && tem > 12){
-            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la óptima");
-        } else if (ran > 60 && tem > 0 ){
-            mensaje.setText("Tu planta no necesita agua aún y la temperatura es la miníma letal es muy frio");
-        } else if (ran > 40 && tem > 30) {
-            mensaje.setText("Tu planta NECESITA agua y la temperatura es la máxima letal es muy calurosa!");
-        } else if (ran > 40 && tem > 12) {
-            mensaje.setText("Tu planta NECESITA agua y la temperatura es la óptima");
-        } else if (ran > 40 && tem > 0) {
-            mensaje.setText("Tu planta NECESITA agua y la temperatura es la miníma letal es muy frio");
-        } else if (ran > 0 && tem > 30) {
-            mensaje.setText("Tu planta NECESITA agua URGENTE porque esta seca y la temperatura es la máxima letal es muy calurosa!! Podría secarse tu planta");
-        } else if (ran > 0 && tem > 12) {
-            mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la óptima");
-        } else if (ran > 0 && tem > 0) {
-            mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la miníma letal es muy frio");
-        }
 
-        // Disparar la funcion mostrandola en el textView de registro
-        resultado.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
-                + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
+        HumTemp Arduino = new HumTemp();
+        //Arduino.setHumedad(mDatabase.child("Humidity").child("Humidity").get());
+        //Arduino.setTemperatura(mDatabase.child("Temperature").child("Temperature").get());
+        //cont.setHumStr(String.valueOf(mDatabase.child("Humidity").child("Humidity").get()).toString());
+        //cont.setTemStr(String.valueOf(mDatabase.child("Temperature").child("Temperature").get()));
+        mDatabase.child("Humidity").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                  humedad1 = snapshot.getValue().toString();
+                  resultado.setText("La humedad es de " + humedad1 + " %");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                resultado.setText("No se ven los datos");
+            }
+        });
+
+        mDatabase.child("Temperature").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    temp1 = snapshot.getValue().toString();
+                    resultado2.setText("La temperatura es de " + temp1 + " grados celcius");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                resultado.setText("No se ven los datos");
+            }
+        });
+
+        try {
+            double ran = 100;
+            float tem = 23;
+
+            if(ran > 60 && tem > 30){
+                mensaje.setText("Tu planta no necesita agua aún y la temperatura es la máxima letal es muy calurosa!");
+            } else if ( ran > 60 && tem > 12){
+                mensaje.setText("Tu planta no necesita agua aún y la temperatura es la óptima");
+            } else if (ran > 60 && tem > 0 ){
+                mensaje.setText("Tu planta no necesita agua aún y la temperatura es la miníma letal es muy frio");
+            } else if (ran > 40 && tem > 30) {
+                mensaje.setText("Tu planta NECESITA agua y la temperatura es la máxima letal es muy calurosa!");
+            } else if (ran > 40 && tem > 12) {
+                mensaje.setText("Tu planta NECESITA agua y la temperatura es la óptima");
+            } else if (ran > 40 && tem > 0) {
+                mensaje.setText("Tu planta NECESITA agua y la temperatura es la miníma letal es muy frio");
+            } else if (ran > 0 && tem > 30) {
+                mensaje.setText("Tu planta NECESITA agua URGENTE porque esta seca y la temperatura es la máxima letal es muy calurosa!! Podría secarse tu planta");
+            } else if (ran > 0 && tem > 12) {
+                mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la óptima");
+            } else if (ran > 0 && tem > 0) {
+                mensaje.setText("Tu planta NECESITA agua URGENTE y la temperatura es la miníma letal es muy frio");
+            }
+
+            // Disparar la funcion mostrandola en el textView de registro
+            //resultado.setText("Apodo: " + apod + " \nNombre: " + op + " \nHumedad: "
+            // + String.format("%.0f", ran) + "% \nTemperatura: " + String.format("%.0f", tem) + "°c");
+            resultado.setText(Arduino.getHumedad() + " %\n" + Arduino.getTemperatura() + " grados celcius");
+        } catch (Exception e) {
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        }
     }
     public void updatePlant(View v){
         Intent i = new Intent(this, UpdatePlant.class);
@@ -150,6 +193,21 @@ public class DetallePlanta extends AppCompatActivity {
     }
 
 
+    private void cargarHumedad() {
+        mDatabase.child("Humidity").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                for (DataSnapshot dataSnap : snapshot.getChildren()) {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
 }
